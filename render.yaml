@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: fire-risk-platform
+    runtime: python
+    # Build: install Python deps, then build the React frontend
+    buildCommand: >
+      pip install -r requirements.txt &&
+      npm --prefix front-end/jpmorgan ci &&
+      npm --prefix front-end/jpmorgan run build
+    # Start: serve everything through FastAPI / uvicorn
+    startCommand: uvicorn Backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13"          # Render supports 3.13; update if 3.14 becomes available
+      # Add your secret keys here (mark as secret in Render dashboard):
+      # - key: GOOGLE_API_KEY
+      #   sync: false

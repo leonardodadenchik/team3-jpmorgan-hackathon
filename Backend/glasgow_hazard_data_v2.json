@@ -1,0 +1,467 @@
+{
+  "zones": [
+    {
+      "postcode": "G1 1",
+      "name": "Merchant City",
+      "lat": 55.8580,
+      "lng": -4.2420,
+      "building_vulnerability": {
+        "score": 7,
+        "type": "Victorian tenement",
+        "age": "pre-1919",
+        "shared_stairwell": true,
+        "floors": 4,
+        "notes": "Dense sandstone tenements, narrow closes"
+      },
+      "lithium_sources": {
+        "score": 6,
+        "ebikes_registered": 34,
+        "ebike_chargers": 3,
+        "electric_cars": 28,
+        "ev_chargers": 5,
+        "escooters": 12,
+        "charging_in_stairwells": false,
+        "notes": "City centre, moderate EV use"
+      },
+      "human_vulnerability": {
+        "score": 4,
+        "elderly_pct": 8,
+        "deprivation_decile": 7,
+        "notes": "Younger mixed population"
+      },
+      "fire_infrastructure": {
+        "score": 9,
+        "nearest_station_km": 0.4,
+        "hydrant_count": 8,
+        "access_rating": "good"
+      },
+      "chemical_proximity": {
+        "score": 3,
+        "swimming_pool_nearby": false,
+        "oil_storage_nearby": false,
+        "notes": "Low chemical risk"
+      },
+      "composite_risk": 4.9,
+      "red_zone_trigger": false
+    },
+    {
+      "postcode": "G1 2",
+      "name": "Trongate",
+      "lat": 55.8558,
+      "lng": -4.2401,
+      "building_vulnerability": {
+        "score": 9,
+        "type": "Victorian tenement",
+        "age": "pre-1919",
+        "shared_stairwell": true,
+        "floors": 5,
+        "notes": "Very dense, poor condition, narrow stairwells"
+      },
+      "lithium_sources": {
+        "score": 9,
+        "ebikes_registered": 78,
+        "ebike_chargers": 12,
+        "electric_cars": 19,
+        "ev_chargers": 2,
+        "escooters": 31,
+        "charging_in_stairwells": true,
+        "notes": "High e-bike density, chargers in common areas reported"
+      },
+      "human_vulnerability": {
+        "score": 8,
+        "elderly_pct": 21,
+        "deprivation_decile": 2,
+        "notes": "High deprivation, elderly residents"
+      },
+      "fire_infrastructure": {
+        "score": 7,
+        "nearest_station_km": 0.8,
+        "hydrant_count": 6,
+        "access_rating": "moderate"
+      },
+      "chemical_proximity": {
+        "score": 4,
+        "swimming_pool_nearby": false,
+        "oil_storage_nearby": false,
+        "notes": "Low chemical risk"
+      },
+      "composite_risk": 7.9,
+      "red_zone_trigger": true
+    },
+    {
+      "postcode": "G4 0",
+      "name": "Cowcaddens",
+      "lat": 55.8672,
+      "lng": -4.2561,
+      "building_vulnerability": {
+        "score": 7,
+        "type": "1960s high-rise",
+        "age": "1960-1975",
+        "shared_stairwell": true,
+        "floors": 14,
+        "notes": "Tower blocks, single stairwell per building"
+      },
+      "lithium_sources": {
+        "score": 8,
+        "ebikes_registered": 61,
+        "ebike_chargers": 8,
+        "electric_cars": 22,
+        "ev_chargers": 4,
+        "escooters": 19,
+        "charging_in_stairwells": true,
+        "notes": "E-bikes stored and charged in lifts and corridors"
+      },
+      "human_vulnerability": {
+        "score": 7,
+        "elderly_pct": 17,
+        "deprivation_decile": 3,
+        "notes": "Moderate deprivation, some elderly"
+      },
+      "fire_infrastructure": {
+        "score": 8,
+        "nearest_station_km": 0.7,
+        "hydrant_count": 7,
+        "access_rating": "good"
+      },
+      "chemical_proximity": {
+        "score": 5,
+        "swimming_pool_nearby": true,
+        "pool_distance_m": 410,
+        "oil_storage_nearby": false,
+        "notes": "Leisure centre with chlorine 410m"
+      },
+      "composite_risk": 6.8,
+      "red_zone_trigger": true
+    },
+    {
+      "postcode": "G20 0",
+      "name": "Maryhill Road North",
+      "lat": 55.8901,
+      "lng": -4.2871,
+      "building_vulnerability": {
+        "score": 8,
+        "type": "Interwar tenement",
+        "age": "1920-1940",
+        "shared_stairwell": true,
+        "floors": 3,
+        "notes": "Ageing stock, some structural issues reported"
+      },
+      "lithium_sources": {
+        "score": 7,
+        "ebikes_registered": 53,
+        "ebike_chargers": 6,
+        "electric_cars": 17,
+        "ev_chargers": 3,
+        "escooters": 14,
+        "charging_in_stairwells": true,
+        "notes": "Stairwell charging common, budget e-bikes prevalent"
+      },
+      "human_vulnerability": {
+        "score": 8,
+        "elderly_pct": 24,
+        "deprivation_decile": 2,
+        "notes": "Deprived, high elderly pct"
+      },
+      "fire_infrastructure": {
+        "score": 6,
+        "nearest_station_km": 1.3,
+        "hydrant_count": 5,
+        "access_rating": "moderate"
+      },
+      "chemical_proximity": {
+        "score": 3,
+        "swimming_pool_nearby": false,
+        "oil_storage_nearby": false,
+        "notes": "Low chemical risk"
+      },
+      "composite_risk": 7.1,
+      "red_zone_trigger": true
+    },
+    {
+      "postcode": "G21 1",
+      "name": "Springburn West",
+      "lat": 55.8871,
+      "lng": -4.2312,
+      "building_vulnerability": {
+        "score": 6,
+        "type": "Post-war council",
+        "age": "1950-1965",
+        "shared_stairwell": true,
+        "floors": 4,
+        "notes": "Council blocks, ageing but not critical"
+      },
+      "lithium_sources": {
+        "score": 6,
+        "ebikes_registered": 44,
+        "ebike_chargers": 5,
+        "electric_cars": 14,
+        "ev_chargers": 3,
+        "escooters": 10,
+        "charging_in_stairwells": false,
+        "notes": "Moderate lithium presence"
+      },
+      "human_vulnerability": {
+        "score": 7,
+        "elderly_pct": 19,
+        "deprivation_decile": 3,
+        "notes": "Moderate deprivation"
+      },
+      "fire_infrastructure": {
+        "score": 7,
+        "nearest_station_km": 1.0,
+        "hydrant_count": 6,
+        "access_rating": "good"
+      },
+      "chemical_proximity": {
+        "score": 3,
+        "swimming_pool_nearby": false,
+        "oil_storage_nearby": false,
+        "notes": "Low chemical risk"
+      },
+      "composite_risk": 5.6,
+      "red_zone_trigger": false
+    },
+    {
+      "postcode": "G31 1",
+      "name": "Parkhead Cross",
+      "lat": 55.8512,
+      "lng": -4.2121,
+      "building_vulnerability": {
+        "score": 9,
+        "type": "Victorian tenement",
+        "age": "pre-1919",
+        "shared_stairwell": true,
+        "floors": 4,
+        "notes": "Poor condition, many lacking fire doors"
+      },
+      "lithium_sources": {
+        "score": 9,
+        "ebikes_registered": 91,
+        "ebike_chargers": 14,
+        "electric_cars": 11,
+        "ev_chargers": 1,
+        "escooters": 38,
+        "charging_in_stairwells": true,
+        "notes": "Highest e-bike count, delivery riders charge overnight"
+      },
+      "human_vulnerability": {
+        "score": 9,
+        "elderly_pct": 26,
+        "deprivation_decile": 1,
+        "notes": "Most deprived in dataset, highest elderly pct"
+      },
+      "fire_infrastructure": {
+        "score": 6,
+        "nearest_station_km": 1.5,
+        "hydrant_count": 4,
+        "access_rating": "moderate"
+      },
+      "chemical_proximity": {
+        "score": 4,
+        "swimming_pool_nearby": true,
+        "pool_distance_m": 580,
+        "oil_storage_nearby": false,
+        "notes": "Leisure centre pool nearby"
+      },
+      "composite_risk": 8.1,
+      "red_zone_trigger": true
+    },
+    {
+      "postcode": "G31 3",
+      "name": "Bridgeton Cross",
+      "lat": 55.8469,
+      "lng": -4.2271,
+      "building_vulnerability": {
+        "score": 8,
+        "type": "Victorian tenement",
+        "age": "pre-1919",
+        "shared_stairwell": true,
+        "floors": 4,
+        "notes": "Dense tenement block, narrow back courts"
+      },
+      "lithium_sources": {
+        "score": 8,
+        "ebikes_registered": 67,
+        "ebike_chargers": 9,
+        "electric_cars": 15,
+        "ev_chargers": 2,
+        "escooters": 22,
+        "charging_in_stairwells": true,
+        "notes": "Stairwell charging reported multiple times"
+      },
+      "human_vulnerability": {
+        "score": 8,
+        "elderly_pct": 22,
+        "deprivation_decile": 2,
+        "notes": "High deprivation, elderly"
+      },
+      "fire_infrastructure": {
+        "score": 6,
+        "nearest_station_km": 1.2,
+        "hydrant_count": 5,
+        "access_rating": "moderate"
+      },
+      "chemical_proximity": {
+        "score": 6,
+        "swimming_pool_nearby": true,
+        "pool_distance_m": 310,
+        "oil_storage_nearby": false,
+        "notes": "Pool 310m away with chlorine storage"
+      },
+      "composite_risk": 7.6,
+      "red_zone_trigger": true
+    },
+    {
+      "postcode": "G51 1",
+      "name": "Govan Cross",
+      "lat": 55.8601,
+      "lng": -4.3081,
+      "building_vulnerability": {
+        "score": 8,
+        "type": "Tenement and deck-access",
+        "age": "pre-1919 and 1970s",
+        "shared_stairwell": true,
+        "floors": 5,
+        "notes": "Mix of old tenements and deck access blocks"
+      },
+      "lithium_sources": {
+        "score": 7,
+        "ebikes_registered": 59,
+        "ebike_chargers": 7,
+        "electric_cars": 21,
+        "ev_chargers": 4,
+        "escooters": 17,
+        "charging_in_stairwells": true,
+        "notes": "Budget e-bikes, poor quality batteries flagged"
+      },
+      "human_vulnerability": {
+        "score": 9,
+        "elderly_pct": 28,
+        "deprivation_decile": 1,
+        "notes": "Highest deprivation, large elderly population"
+      },
+      "fire_infrastructure": {
+        "score": 5,
+        "nearest_station_km": 2.1,
+        "hydrant_count": 3,
+        "access_rating": "poor"
+      },
+      "chemical_proximity": {
+        "score": 6,
+        "swimming_pool_nearby": false,
+        "oil_storage_nearby": true,
+        "oil_distance_m": 820,
+        "notes": "Former shipyard oil storage 820m"
+      },
+      "composite_risk": 7.8,
+      "red_zone_trigger": true
+    },
+    {
+      "postcode": "G66 1",
+      "name": "Port Dundas",
+      "lat": 55.8721,
+      "lng": -4.2551,
+      "building_vulnerability": {
+        "score": 5,
+        "type": "Industrial conversion",
+        "age": "mixed",
+        "shared_stairwell": false,
+        "floors": 2,
+        "notes": "Warehouse conversions, lower residential density"
+      },
+      "lithium_sources": {
+        "score": 5,
+        "ebikes_registered": 31,
+        "ebike_chargers": 4,
+        "electric_cars": 38,
+        "ev_chargers": 9,
+        "escooters": 8,
+        "charging_in_stairwells": false,
+        "notes": "Higher EV car use, fewer e-bikes"
+      },
+      "human_vulnerability": {
+        "score": 4,
+        "elderly_pct": 9,
+        "deprivation_decile": 5,
+        "notes": "Younger population, moderate deprivation"
+      },
+      "fire_infrastructure": {
+        "score": 9,
+        "nearest_station_km": 0.6,
+        "hydrant_count": 8,
+        "access_rating": "good"
+      },
+      "chemical_proximity": {
+        "score": 9,
+        "swimming_pool_nearby": false,
+        "oil_storage_nearby": true,
+        "oil_distance_m": 170,
+        "notes": "Active oil depot 170m, canal chemical storage"
+      },
+      "composite_risk": 5.8,
+      "red_zone_trigger": false
+    },
+    {
+      "postcode": "G12 8",
+      "name": "Hillhead",
+      "lat": 55.8741,
+      "lng": -4.2951,
+      "building_vulnerability": {
+        "score": 4,
+        "type": "Sandstone tenement",
+        "age": "1890-1910",
+        "shared_stairwell": true,
+        "floors": 4,
+        "notes": "Well maintained, HMO student flats"
+      },
+      "lithium_sources": {
+        "score": 3,
+        "ebikes_registered": 19,
+        "ebike_chargers": 2,
+        "electric_cars": 41,
+        "ev_chargers": 11,
+        "escooters": 6,
+        "charging_in_stairwells": false,
+        "notes": "More EVs than e-bikes, safer charging behaviour"
+      },
+      "human_vulnerability": {
+        "score": 2,
+        "elderly_pct": 6,
+        "deprivation_decile": 9,
+        "notes": "Mostly students, low deprivation"
+      },
+      "fire_infrastructure": {
+        "score": 9,
+        "nearest_station_km": 0.5,
+        "hydrant_count": 10,
+        "access_rating": "good"
+      },
+      "chemical_proximity": {
+        "score": 2,
+        "swimming_pool_nearby": true,
+        "pool_distance_m": 380,
+        "oil_storage_nearby": false,
+        "notes": "University pool, no industrial chemical risk"
+      },
+      "composite_risk": 3.1,
+      "red_zone_trigger": false
+    }
+  ],
+  "risk_weights": {
+    "building_vulnerability": 0.25,
+    "lithium_sources": 0.30,
+    "human_vulnerability": 0.20,
+    "fire_infrastructure": 0.10,
+    "chemical_proximity": 0.15
+  },
+  "red_zone_trigger": {
+    "rule": "building_vulnerability.score >= 7 AND lithium_sources.score >= 7",
+    "description": "Zone is RED if there is both a high lithium source density AND a vulnerable old building. Both must be true."
+  },
+  "risk_thresholds": {
+    "critical": 7.5,
+    "high": 6.0,
+    "medium": 4.0,
+    "low": 0
+  }
+}

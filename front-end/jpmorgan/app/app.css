@@ -1,0 +1,113 @@
+/* ─── Fonts ─────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:wght@300;400;600&display=swap");
+
+/* ─── Tailwind ───────────────────────────────────────────────── */
+@import "tailwindcss";
+
+/* ─── Light Theme Tokens ─────────────────────────────────────── */
+@theme {
+  --font-display: "Bebas Neue", Impact, sans-serif;
+  --font-body:    "Source Serif 4", Georgia, serif;
+
+  /* Brand */
+  --color-fire:   #c0392b;   /* borders, strong accents */
+  --color-flame:  #d94a38;   /* primary accent text */
+  --color-glow:   #ff7a66;   /* highlights */
+  --color-amber:  #c47a00;   /* secondary accent */
+  --color-link:   #b23a2b;   /* links */
+
+  /* Surfaces (light) */
+  --color-base:      #ffffff;
+  --color-surface-1: #f7f7f8;
+  --color-surface-2: #efeff1;
+  --color-surface-3: #e6e6ea;
+
+  /* Borders */
+  --color-line:      #d1d1d6;
+  --color-line-warm: #c8c2be;
+  --color-line-mid:  #b9a29a;
+
+  /* Text */
+  --color-fg-1: #111111;  /* headings */
+  --color-fg-2: #333333;  /* body */
+  --color-fg-3: #555555;  /* secondary */
+  --color-fg-4: #777777;  /* muted */
+}
+
+/* ─── :root fallback ─────────────────────────────────────────── */
+:root {
+  --font-display: "Bebas Neue", Impact, sans-serif;
+  --font-body:    "Source Serif 4", Georgia, serif;
+
+  --color-fire:      #c0392b;
+  --color-flame:     #d94a38;
+  --color-glow:      #ff7a66;
+  --color-amber:     #c47a00;
+  --color-link:      #b23a2b;
+  --color-base:      #ffffff;
+  --color-surface-1: #f7f7f8;
+  --color-surface-2: #efeff1;
+  --color-surface-3: #e6e6ea;
+
+  --color-line:      #d1d1d6;
+  --color-line-warm: #c8c2be;
+  --color-line-mid:  #b9a29a;
+
+  --color-fg-1: #111111;
+  --color-fg-2: #333333;
+  --color-fg-3: #555555;
+  --color-fg-4: #777777;
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-base);
+  color: var(--color-fg-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Font helpers ───────────────────────────────────────────── */
+.ff-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+.ff-body {
+  font-family: var(--font-body);
+}
+
+/* ─── Animations ─────────────────────────────────────────────── */
+@keyframes rise {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--color-line); }
+  50%      { border-color: var(--color-flame); }
+}
+
+/* ─── Helpers ───────────────────────────────────────────────── */
+.rise-in {
+  animation: rise 0.6s ease-out both;
+}
+.animate-pulse-border {
+  animation: pulse-border 1.5s ease-in-out infinite;
+}
+
+/* ─── Remove scanlines for light mode ───────────────────────── */
+.scanlines {
+  display: none;
+}
+
+/* ─── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .rise-in,
+  .animate-pulse-border {
+    animation: none;
+  }
+}

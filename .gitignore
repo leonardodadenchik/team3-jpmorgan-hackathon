@@ -1,0 +1,38 @@
+
+# --- Python & Environment ---
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+
+# --- UV & Dependency Management ---
+# We keep pyproject.toml and uv.lock, but ignore the tool's cache
+.uv/
+
+# --- IDE Settings ---
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+
+*.pem
+*.ppk
+Team-3_Server_Details.txt
+
+# --- Data & Temporary Files ---
+# If your JSON data is huge or auto-generated, ignore it.
+# Keep it if it's the "seed" data for your API.
+# glasgow_hazard_data_v2.json
+*.log
+*.zip
+*.pdf
+
+.ipynb_checkpoints/
+
+.env
+
+# --- Frontend build output ---
+front-end/jpmorgan/build/
+front-end/jpmorgan/node_modules/

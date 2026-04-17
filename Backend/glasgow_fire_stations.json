@@ -1,0 +1,13 @@
+[
+  { "callsign": "B01", "name": "Cowcaddens",  "fullName": "Cowcaddens Fire Station",  "type": "WT", "lat": 55.8678, "lng": -4.2583 },
+  { "callsign": "B02", "name": "Calton",      "fullName": "Calton Fire Station",      "type": "WT", "lat": 55.8534, "lng": -4.2317 },
+  { "callsign": "B03", "name": "Polmadie",    "fullName": "Polmadie Fire Station",    "type": "WT", "lat": 55.8395, "lng": -4.2468 },
+  { "callsign": "B04", "name": "Castlemilk",  "fullName": "Castlemilk Fire Station",  "type": "WT", "lat": 55.8132, "lng": -4.2232 },
+  { "callsign": "B05", "name": "Pollok",      "fullName": "Pollok Fire Station",      "type": "WT", "lat": 55.8285, "lng": -4.3142 },
+  { "callsign": "B06", "name": "Govan",       "fullName": "Govan Fire Station",       "type": "WT", "lat": 55.8609, "lng": -4.3143 },
+  { "callsign": "B07", "name": "Yorkhill",    "fullName": "Yorkhill Fire Station",    "type": "WT", "lat": 55.8701, "lng": -4.2968 },
+  { "callsign": "B08", "name": "Knightswood", "fullName": "Knightswood Fire Station", "type": "WT", "lat": 55.8890, "lng": -4.3622 },
+  { "callsign": "B09", "name": "Maryhill",    "fullName": "Maryhill Fire Station",    "type": "WT", "lat": 55.8876, "lng": -4.2938 },
+  { "callsign": "B10", "name": "Springburn",  "fullName": "Springburn Fire Station",  "type": "WT", "lat": 55.8849, "lng": -4.2339 },
+  { "callsign": "B11", "name": "Easterhouse", "fullName": "Easterhouse Fire Station", "type": "WT", "lat": 55.8649, "lng": -4.1221 }
+]

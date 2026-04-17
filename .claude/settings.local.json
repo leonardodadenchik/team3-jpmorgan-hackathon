@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls *)",
+      "Bash(xargs cat *)",
+      "Bash(npm install *)",
+      "Bash(npx react-router *)",
+      "Bash(npx tsc *)",
+      "Bash(python -c \"from Backend.weather_service import get_forecast_modifiers; from Backend.risk_engine import forecast_zone_risk; print\\('imports OK'\\)\")",
+      "Bash(.venv/Scripts/python -c \"from Backend.weather_service import get_forecast_modifiers; from Backend.risk_engine import forecast_zone_risk; print\\('imports OK'\\)\")",
+      "Bash(.venv/Scripts/python -c ' *)",
+      "Bash(node -e \"require\\('osmtogeojson'\\); console.log\\('ok'\\)\")",
+      "Bash(npm audit *)",
+      "Bash(npm uninstall *)",
+      "Bash(python -m uvicorn main:app --reload)"
+    ]
+  }
+}
