@@ -477,11 +477,13 @@ const DRAWER_STYLE: React.CSSProperties = {
  * @param onClose - Called when the user dismisses the modal (× button,
  *                  backdrop click, or Escape key via the parent useEffect).
  */
+type AiErrorKind = "gemini" | "server" | "network" | "unknown";
+
 type AiState =
 	| { status: "idle" }
 	| { status: "loading" }
 	| { status: "done"; text: string }
-	| { status: "error"; message: string };
+	| { status: "error"; kind: AiErrorKind; message: string; detail?: string };
 
 /** Renders the Gemini fire-development narrative with section headings highlighted. */
 function FireAnalysisResult({ text }: { text: string }) {
@@ -539,22 +541,57 @@ function ZonePanel({ zone, onClose }: { zone: Zone; onClose: () => void }) {
 			const res = await axios.get(`${API_BASE}/api/zones/${encodeURIComponent(zone.postcode)}/fire-analysis`);
 			setAiState({ status: "done", text: res.data.analysis });
 		} catch (err) {
-			let msg = "Unexpected error — please try again.";
 			if (axios.isAxiosError(err)) {
 				if (!err.response) {
-					msg = "Could not reach the backend. Check that the server is running on " + API_BASE + ".";
-				} else if (err.response.status === 404) {
-					msg = "Zone not found on the server (postcode: " + zone.postcode + ").";
-				} else if (err.response.status === 500) {
-					const detail = err.response.data?.detail;
-					msg = detail
-						? "Server error: " + detail
-						: "The AI service returned an error. This may be a temporary issue — please retry.";
-				} else {
-					msg = `Server responded with ${err.response.status} ${err.response.statusText}.`;
+					setAiState({
+						status: "error",
+						kind: "network",
+						message: "Cannot reach the server",
+						detail: "Check that the backend is running on " + API_BASE + ".",
+					});
+					return;
 				}
+
+				const detail: string | undefined = err.response.data?.detail;
+				const status = err.response.status;
+
+				if (status === 503 || (detail && detail.startsWith("Gemini API error"))) {
+					// Extract the human-readable part after "Gemini API error: "
+					const geminiDetail = detail?.replace(/^Gemini API error:\s*/i, "");
+					setAiState({
+						status: "error",
+						kind: "gemini",
+						message: "Gemini AI is unavailable",
+						detail: geminiDetail || "The Gemini API did not respond. This is usually a quota or API key issue — please try again shortly.",
+					});
+					return;
+				}
+
+				if (status === 404) {
+					setAiState({
+						status: "error",
+						kind: "server",
+						message: "Zone not found",
+						detail: `Postcode "${zone.postcode}" was not found on the server.`,
+					});
+					return;
+				}
+
+				setAiState({
+					status: "error",
+					kind: "server",
+					message: `Server error (${status})`,
+					detail: detail ?? err.response.statusText,
+				});
+				return;
 			}
-			setAiState({ status: "error", message: msg });
+
+			setAiState({
+				status: "error",
+				kind: "unknown",
+				message: "Unexpected error",
+				detail: err instanceof Error ? err.message : "Please try again.",
+			});
 		}
 	}
 
@@ -748,15 +785,44 @@ function ZonePanel({ zone, onClose }: { zone: Zone; onClose: () => void }) {
 				)}
 
 				{aiState.status === "error" && (
-					<div style={{ border: "1.5px solid #fca5a5", borderRadius: 6, background: "#fef2f2", padding: "12px 14px" }}>
-						<p style={{ margin: "0 0 8px", fontSize: 13, fontWeight: 700, color: "#b91c1c" }}>Analysis failed</p>
-						<p style={{ margin: "0 0 10px", fontSize: 12, color: "#7f1d1d", lineHeight: 1.5 }}>{aiState.message}</p>
-						<button
-							onClick={runAnalysis}
-							style={{ padding: "7px 14px", fontSize: 12, fontWeight: 700, background: "#dc2626", color: "#fff", border: "none", borderRadius: 5, cursor: "pointer" }}
-						>
-							Retry
-						</button>
+					<div style={{ border: "1.5px solid #fca5a5", borderRadius: 8, background: "#fef2f2", overflow: "hidden" }}>
+						{/* colour bar */}
+						<div style={{ height: 3, background: aiState.kind === "gemini" ? "#7c3aed" : "#dc2626" }} />
+						<div style={{ padding: "12px 14px" }}>
+							<div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+								{/* icon */}
+								<div style={{
+									flexShrink: 0, width: 30, height: 30, borderRadius: "50%",
+									background: aiState.kind === "gemini" ? "#ede9fe" : "#fee2e2",
+									display: "flex", alignItems: "center", justifyContent: "center",
+									fontSize: 15,
+								}}>
+									{aiState.kind === "gemini" ? "✦" : aiState.kind === "network" ? "⚡" : "✕"}
+								</div>
+								<div style={{ flex: 1, minWidth: 0 }}>
+									<p style={{ margin: "0 0 3px", fontSize: 13, fontWeight: 700, color: aiState.kind === "gemini" ? "#5b21b6" : "#b91c1c" }}>
+										{aiState.message}
+									</p>
+									{aiState.detail && (
+										<p style={{ margin: 0, fontSize: 11, color: "#6b7280", lineHeight: 1.5 }}>
+											{aiState.detail}
+										</p>
+									)}
+								</div>
+							</div>
+							<button
+								onClick={runAnalysis}
+								style={{
+									marginTop: 12, width: "100%", padding: "8px 14px",
+									fontSize: 12, fontWeight: 700,
+									background: aiState.kind === "gemini" ? "#7c3aed" : "#dc2626",
+									color: "#fff", border: "none", borderRadius: 5, cursor: "pointer",
+									letterSpacing: "0.03em",
+								}}
+							>
+								Try again
+							</button>
+						</div>
 					</div>
 				)}
 
