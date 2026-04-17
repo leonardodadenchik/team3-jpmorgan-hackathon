@@ -18,7 +18,7 @@ def ai_standardize_data(raw_text):
     """
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3-flash-preview",
         contents=prompt
     )
 
@@ -104,7 +104,7 @@ CURRENT WEATHER: {weather.get('wind_speed', '?')} m/s wind from {_compass(weathe
     client = _gemini_client()
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3-flash-preview",
             contents=prompt,
         )
     except Exception as e:
